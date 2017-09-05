@@ -11,7 +11,8 @@
 *.iws
 *.iml
 *.ipr
-*.rebel
+rebel.xml
+.editorconfig
 
 ### NetBeans ###
 nbproject/private/
@@ -27,4 +28,3 @@ out/
 .gradle
 /build/
 !gradle/wrapper/gradle-wrapper.jar
-backend/src/main/resources/rebel.xml
