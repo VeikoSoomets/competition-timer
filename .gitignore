@@ -1,7 +1,3 @@
-.gradle
-/build/
-!gradle/wrapper/gradle-wrapper.jar
-
 ### STS ###
 .apt_generated
 .classpath
@@ -23,3 +19,10 @@ nbbuild/
 dist/
 nbdist/
 .nb-gradle/
+
+### Project ###
+frontend/node_modules/
+out/
+.gradle
+/build/
+!gradle/wrapper/gradle-wrapper.jar
