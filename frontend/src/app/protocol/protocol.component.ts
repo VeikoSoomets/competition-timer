@@ -15,7 +15,6 @@ export class ProtocolComponent implements OnInit {
   constructor(private protocolService: ProtocolService) { }
 
   ngOnInit() {
-    debugger;
     if (!this.times) {
       this.times = [];
     }

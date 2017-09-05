@@ -8,7 +8,7 @@ export class WebsocketService {
   private subject: Rx.Subject<MessageEvent>;
 
   public connect(url): Rx.Subject<MessageEvent> {
-    if (!this.subject) {
+    if (!this.connectionExists()) {
       this.subject = this.create(url);
       console.log("Successfully connected: " + url);
     }
@@ -19,6 +19,10 @@ export class WebsocketService {
     if(this.subject) {
       this.subject.next(message);
     }
+  }
+
+  public connectionExists(): boolean {
+    return this.subject !== undefined;
   }
 
   private create(url): Rx.Subject<MessageEvent> {
