@@ -206,6 +206,111 @@
             }
           }]
       }
+    },
+    {
+      "changeSet": {
+        "id": "8",
+        "author": "veiko",
+        "changes": [
+          {
+            "insert": {
+              "catalogName": "test",
+              "columns": [
+                {
+                  "column": {
+                    "name": "name",
+                    "value": "Veiko Soomets"
+                  }
+                },
+                {
+                  "column": {
+                    "name": "chip_id",
+                    "value": "1"
+                  }
+                },
+                {
+                  "column": {
+                    "name": "starting_number",
+                    "value": "12"
+                  }
+                }
+              ],
+              "dbms": "h2",
+              "schemaName": "public",
+              "tableName": "athlete"
+            }
+          }]
+      }
+    },
+    {
+      "changeSet": {
+        "id": "9",
+        "author": "veiko",
+        "changes": [
+          {
+            "insert": {
+              "catalogName": "test",
+              "columns": [
+                {
+                  "column": {
+                    "name": "name",
+                    "value": "Kaarel Harakas"
+                  }
+                },
+                {
+                  "column": {
+                    "name": "chip_id",
+                    "value": "5"
+                  }
+                },
+                {
+                  "column": {
+                    "name": "starting_number",
+                    "value": "23"
+                  }
+                }
+              ],
+              "dbms": "h2",
+              "schemaName": "public",
+              "tableName": "athlete"
+            }
+          }]
+      }
+    },
+    {
+      "changeSet": {
+        "id": "10",
+        "author": "veiko",
+        "changes": [
+          {
+            "insert": {
+              "catalogName": "test",
+              "columns": [
+                {
+                  "column": {
+                    "name": "name",
+                    "value": "Mari Maasikas"
+                  }
+                },
+                {
+                  "column": {
+                    "name": "chip_id",
+                    "value": "7"
+                  }
+                },
+                {
+                  "column": {
+                    "name": "starting_number",
+                    "value": "35"
+                  }
+                }
+              ],
+              "dbms": "h2",
+              "schemaName": "public",
+              "tableName": "athlete"
+            }
+          }]
+      }
     }
   ]
 }

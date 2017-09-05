@@ -1,1 +1,7 @@
-/* You can add global styles to this file, and also import other style files */
+.ui-state-active {
+  border-color: inherit !important;
+  background: inherit !important;;
+}
+.ui-datepicker {
+  width: 18em !important;
+}
