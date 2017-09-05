@@ -1,0 +1,35 @@
+<div class="row">
+  <div class="col-md-6 col-md-offset-3 text-center">
+    <h4>Lisa sportlane</h4>
+    <form (ngSubmit)="save(athleteForm.value)" [formGroup]="athleteForm">
+      <div class="form-group">
+        <input type="text" size="30" pInputText formControlName="name" placeholder="Nimi">
+        <br/>
+        <small [hidden]="athleteForm.controls.name.valid || (athleteForm.controls.name.pristine)" class="text-danger">
+          Viga nime sisestamisel
+        </small>
+      </div>
+      <br/>
+      <div class="form-group">
+        <input type="text" size="30" pInputText formControlName="chipId" placeholder="Kiibi ID">
+        <br/>
+        <small [hidden]="athleteForm.controls.chipId.valid || (athleteForm.controls.chipId.pristine)" class="text-danger">
+          Viga kiibi ID sisestamisel
+        </small>
+      </div>
+      <br/>
+      <div class="form-group">
+        <input type="text" size="30" pInputText formControlName="startingNumber" placeholder="Stardinumber">
+        <br/>
+        <small [hidden]="athleteForm.controls.startingNumber.valid || (athleteForm.controls.startingNumber.pristine)" class="text-danger">
+          Viga stardinumbri sisestamisel
+        </small>
+      </div>
+      <br/>
+      <div class="form-group">
+        <button pButton type="submit" class="btn" [disabled]="!athleteForm.valid" label="Salvesta"></button>
+        <button pButton type="button" class="btn btn-default" (click)="initForm()" label="Algseadista"></button>
+      </div>
+    </form>
+  </div>
+</div>
