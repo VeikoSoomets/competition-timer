@@ -15,6 +15,12 @@ export class WebsocketService {
     return this.subject;
   }
 
+  public sendMessage(message: any) {
+    if(this.subject) {
+      this.subject.next(message);
+    }
+  }
+
   private create(url): Rx.Subject<MessageEvent> {
     let ws = new WebSocket(url);
 

@@ -10,7 +10,6 @@
           <tr>
             <th>Stardinumber</th>
             <th>Nimi</th>
-            <th>Ajavõtu punkt</th>
             <th>Aeg</th>
           </tr>
         </thead>
@@ -18,7 +17,6 @@
           <tr *ngFor="let time of groupedTime">
             <td>{{time.athlete.startingNumber}}</td>
             <td>{{time.athlete.name}}</td>
-            <td>{{time.timePoint.description}}</td>
             <td>{{time.value | date:'HH:mm:ss'}}</td>
           </tr>
         </tbody>

@@ -8,13 +8,17 @@ import {ArrayUtil} from '../general/array-util';
   templateUrl: './protocol.component.html'
 })
 export class ProtocolComponent implements OnInit {
-  times: Time[] = [];
+  times: Time[];
   groupedTimes = {};
   NO_OF_ATHLETES_IN_LIST = 5;
 
   constructor(private protocolService: ProtocolService) { }
 
   ngOnInit() {
+    debugger;
+    if (!this.times) {
+      this.times = [];
+    }
     this.protocolService.getTimes().subscribe((data: Time[]) => {
       this.times = this.times.concat(data);
       // First we will group times by timepoints and then we will sort the arrays and take top 5 times
