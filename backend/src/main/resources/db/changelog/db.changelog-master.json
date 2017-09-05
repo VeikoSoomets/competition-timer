@@ -1,0 +1,211 @@
+{
+  "databaseChangeLog": [
+    {
+      "preConditions": [
+        {
+          "runningAs": {
+            "username": "veiko"
+          }
+        }
+      ]
+    },
+    {
+      "changeSet": {
+        "id": "1",
+        "author": "veiko",
+        "changes": [
+          {
+            "createTable": {
+              "tableName": "time",
+              "columns": [
+                {
+                  "column": {
+                    "name": "id",
+                    "type": "int",
+                    "autoIncrement": true,
+                    "constraints": {
+                      "primaryKey": true,
+                      "nullable": false
+                    }
+                  }
+                },
+                {
+                  "column": {
+                    "name": "value",
+                    "type": "timestamp"
+                  }
+                },
+                {
+                  "column": {
+                    "name": "timepoint_id",
+                    "type": "int"
+                  }
+                },
+                {
+                  "column": {
+                    "name": "athlete_id",
+                    "type": "int"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "changeSet": {
+        "id": "2",
+        "author": "veiko",
+        "changes": [
+          {
+            "createTable": {
+              "tableName": "athlete",
+              "columns": [
+                {
+                  "column": {
+                    "name": "id",
+                    "type": "int",
+                    "autoIncrement": true,
+                    "constraints": {
+                      "primaryKey": true,
+                      "nullable": false
+                    }
+                  }
+                },
+                {
+                  "column": {
+                    "name": "name",
+                    "type": "varchar(50)"
+                  }
+                },
+                {
+                  "column": {
+                    "name": "chip_id",
+                    "type": "int"
+                  }
+                },
+                {
+                  "column": {
+                    "name": "starting_number",
+                    "type": "int"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "changeSet": {
+        "id": "3",
+        "author": "veiko",
+        "changes": [
+          {
+            "createTable": {
+              "tableName": "timepoint",
+              "columns": [
+                {
+                  "column": {
+                    "name": "id",
+                    "type": "int",
+                    "autoIncrement": true,
+                    "constraints": {
+                      "primaryKey": true,
+                      "nullable": false
+                    }
+                  }
+                },
+                {
+                  "column": {
+                    "name": "description",
+                    "type": "varchar(50)"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "changeSet": {
+        "id": "4",
+        "author": "veiko",
+        "changes": [
+          {
+            "insert": {
+              "catalogName": "test",
+              "columns": [
+                {
+                  "column": {
+                    "name": "description",
+                    "value": "Finišikoridori sisenemine"
+                  }
+                }
+              ],
+              "dbms": "h2",
+              "schemaName": "public",
+              "tableName": "timepoint"
+            }
+          }]
+      }
+    },
+    {
+      "changeSet": {
+        "id": "5",
+        "author": "veiko",
+        "changes": [
+          {
+            "insert": {
+              "catalogName": "test",
+              "columns": [
+                {
+                  "column": {
+                    "name": "description",
+                    "value": "Finišijoone ületus"
+                  }
+                }
+              ],
+              "dbms": "h2",
+              "schemaName": "public",
+              "tableName": "timepoint"
+            }
+          }]
+      }
+    },
+    {
+      "changeSet": {
+        "id": "6",
+        "author": "veiko",
+        "changes": [
+          {
+            "addForeignKeyConstraint": {
+              "baseColumnNames": "timepoint_id",
+              "baseTableName": "time",
+              "constraintName": "fk_time_timepoint",
+              "referencedColumnNames": "id",
+              "referencedTableName": "timepoint"
+            }
+          }]
+      }
+    },
+    {
+      "changeSet": {
+        "id": "7",
+        "author": "veiko",
+        "changes": [
+          {
+            "addForeignKeyConstraint": {
+              "baseColumnNames": "athlete_id",
+              "baseTableName": "time",
+              "constraintName": "fk_time_athlete",
+              "referencedColumnNames": "id",
+              "referencedTableName": "athlete"
+            }
+          }]
+      }
+    }
+  ]
+}
