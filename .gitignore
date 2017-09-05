@@ -27,3 +27,4 @@ out/
 .gradle
 /build/
 !gradle/wrapper/gradle-wrapper.jar
+backend/src/main/resources/rebel.xml
